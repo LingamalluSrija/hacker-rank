@@ -1,0 +1,27 @@
+ public static String findDay(int month, int day, int year) {
+        
+        String[] days = {"MONDAY" ,"TUESDAY","WEDNESDAY", "THURSDAY","FRIDAY","SATURDAY","SUNDAY"};
+        int[] months = {6,2,2,5,0,3,5,1,4,6,2,4};
+        month--;
+        
+        int temp = year - 2000;
+        int rem;
+        
+        if (temp < 7){    
+            rem =  temp + months[month] + day -1;   
+            rem %=7;
+          
+            return days[rem];
+        }
+        
+        temp *= 1.25;
+        rem = temp%7;
+        
+        if(temp % 4 == 0)    temp--;
+         
+        rem = rem + months[month] + day - 1;   
+        rem %=7;
+            
+        return days[rem];
+        
+    }
