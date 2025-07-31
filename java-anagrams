@@ -1,0 +1,23 @@
+static boolean isAnagram(String a, String b) {
+        
+    //to avoid cases 
+      a = a.toLowerCase();
+      b = b.toLowerCase();
+      char string_a [] = a.toCharArray();
+      char string_b [] = b.toCharArray();
+      
+    java.util.Arrays.sort(string_a);
+    java.util.Arrays.sort(string_b);
+      
+      if(string_a.length == string_b.length){
+        for(int i = 0 ; i < string_a.length ; i++){
+            if(string_a[i] != string_b[i]){
+                return false;
+            }
+        }
+        return true;
+      }else{
+        return false;
+      }
+
+    }
